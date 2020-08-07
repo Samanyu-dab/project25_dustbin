@@ -9,7 +9,8 @@ var tmp=0;
 function preload()
 {
 imajai=loadImage("most-famous-streets-abbey-road.jpg")
-	
+	dustbinImage=loadImage("dustbingreen.png")
+	himoglobin_ka_bacha=loadImage("paper.png")
 }
 
 function setup() {
@@ -21,16 +22,21 @@ function setup() {
 
 	
 
-	rec1=createSprite(930,730,20,100)
+	rec1=createSprite(980,730,20,100)
 	rec1.shapeColor="red"
 
-	rec2=createSprite(1040,770,200,20)
+	rec2=createSprite(1080,770,200,20)
 	rec2.shapeColor="red"
 
 	rec3=createSprite(1150,730,20,100)
 	rec3.shapeColor="red"
 
-	paperball=new paper(10,680,20)
+	dusbin_image=createSprite(1080,650,30,100)
+	dusbin_image.addImage(dustbinImage)
+	
+
+	paperball=new paper(15,680,60)
+	
   
 
 	ground = Bodies.rectangle(width/2, 790, width, 20 , {isStatic:true} );
@@ -55,9 +61,9 @@ function draw() {
 
 function keyPressed() {
     
-    if (keyCode === UP_ARROW && tmp===0 ){
+    if (keyCode === UP_ARROW && tmp===0  ){
 		//Matter.Body.setVelocity( paperball.body, {x: 2, y: -2});
-Matter.Body.applyForce(paperball.body,paperball.body.position,{x:85,y:-85});
+Matter.Body.applyForce(paperball.body,paperball.body.position,{x:900,y:-900});
 tmp=1
     }
 }
